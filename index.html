@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bright Beginnings Daycare Centre</title>
+  <meta name="description" content="Bright Beginnings Daycare Centre — a safe, loving home away from home in Eden Park Ext 5. Applications open for 2025." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home">
+  <img src="images/logo.png" alt="Bright Beginnings Logo" class="logo-img">
+  <span class="brand-text">Bright Beginnings</span>
+</a>
+
+      <nav class="nav">
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryMenu">☰</button>
+        <ul id="primaryMenu" class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#apply" class="btn-cta">Apply (2025)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider" id="home">
+    <div class="slide active" style="background-image:url('images/slide1.jpg')">
+      <div class="overlay center">
+        <h1>Bright Beginnings Daycare</h1>
+        <p>A safe and loving environment — Applications open for 2025 </p>
+        <div class="hero-buttons">
+          <a href="#apply" class="btn-primary">Apply Now</a>
+          <a href="#about" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide" style="background-image:url('images/slide2.jpg')">
+      <div class="overlay center">
+        <h1>Qualified Staff </h1>
+        <p>First Aid trained, caring staff in separate age classes </p>
+        <div class="hero-buttons">
+          <a href="#programs" class="btn-primary">Our Programs</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide" style="background-image:url('images/slide3.jpg')">
+      <div class="overlay center">
+        <h1>Nutritious Meals </h1>
+        <p>Cooked breakfast & lunch provided daily </p>
+        <div class="hero-buttons">
+          <a href="#apply" class="btn-primary">Enroll Today</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Everything else remains unchanged (About, Programs, Gallery, Application Form, Footer) -->
+  <section id="about" class="wrap section card">
+    <h2>About Us</h2>
+    <p>Bright Beginnings is a nurturing daycare centre in Eden Park Ext 5. We provide a warm environment where children learn through play, creativity, music and movement. Our preschool programme incorporates cognitive development, fine/gross motor skills, sensory exploration, and potty training while developing the child holistically.</p>
+    <p>We open at 06:00 and close at 18:00 (Mon–Fri). Half-day & full-day options available. We open throughout school holidays except for a three-week closure at year-end. Progress reports are issued in June and December.</p>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs" class="wrap section">
+    <h2>Programs & Fees</h2>
+    <div class="grid cards">
+      <article class="card">
+        <h3>Tiny Tots (1–2 yrs)</h3>
+        <p>Gentle group introduction: sensory play, songs, naps, outdoor time.</p>
+      </article>
+      <article class="card">
+        <h3>Little Learners (3–4 yrs)</h3>
+        <p>Play-based learning: early literacy, numeracy, art, music, movement.</p>
+      </article>
+      <article class="card">
+        <h3>Pre-R (5 yrs)</h3>
+        <p>School readiness: phonics, pre-writing, problem solving, independence.</p>
+      </article>
+    </div>
+    <div class="notes card">
+      <p><strong>Meals:</strong> Cooked breakfast & lunch daily.</p>
+      <p><strong>Extras:</strong> Weekly themes & extra mural activities.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Preview -->
+<section id="gallery" class="wrap section">
+  <h2>Gallery</h2>
+  <p class="muted">Click any image to view the full gallery.</p>
+  <div class="gallery-grid">
+    <a href="gallery.html"><img src="gallery/gallery1.jpg" alt="Painting activity"></a>
+    <a href="gallery.html"><img src="gallery/gallery2.jpg" alt="Story time"></a>
+    <a href="gallery.html"><img src="gallery/gallery3.jpg" alt="Outdoor play"></a>
+  </div>
+</section>
+
+
+   
+    <!-- Application Form -->
+    <section id="apply" class="wrap section">
+      <h2>Application Form — Bright Beginnings (2025)</h2>
+      <p class="muted">Complete and submit this form. Replace the form <code>action</code> with your Formspree endpoint to receive submissions.</p>
+
+      <div class="card form-card">
+        <form id="applicationForm"
+              action="https://formspree.io/f/your-form-id"
+              method="POST"
+              enctype="multipart/form-data"
+              novalidate>
+
+          <!-- Child Details -->
+          <fieldset>
+            <legend>Child's Details</legend>
+
+            <label>Full name
+              <input name="child_full_name" type="text" required>
+            </label>
+
+            <div class="two-col">
+              <label>Date of birth
+                <input name="child_dob" type="date" required>
+              </label>
+              <label>Preferred name
+                <input name="child_preferred_name" type="text">
+              </label>
+            </div>
+
+            <label>Home address
+              <textarea name="child_address" rows="2" required></textarea>
+            </label>
+
+            <div class="two-col">
+              <label>Sex
+                <select name="child_gender" required>
+                  <option value="">Select…</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Ethnic group (optional)
+                <input name="child_ethnic" type="text">
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>First language at home
+                <input name="child_language" type="text">
+              </label>
+              <label>Other languages spoken
+                <input name="child_other_languages" type="text">
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Parent / Guardian -->
+          <fieldset>
+            <legend>Mother / Guardian (primary)</legend>
+            <div class="two-col">
+              <label>Full name
+                <input name="mother_name" type="text">
+              </label>
+              <label>Mobile
+                <input name="mother_mobile" type="tel">
+              </label>
+            </div>
+            <div class="two-col">
+              <label>Email
+                <input name="mother_email" type="email">
+              </label>
+              <label>Occupation
+                <input name="mother_occupation" type="text">
+              </label>
+            </div>
+            <label>Home address (if different)
+              <textarea name="mother_address" rows="2"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Father / Guardian (secondary)</legend>
+            <div class="two-col">
+              <label>Full name
+                <input name="father_name" type="text">
+              </label>
+              <label>Mobile
+                <input name="father_mobile" type="tel">
+              </label>
+            </div>
+            <div class="two-col">
+              <label>Email
+                <input name="father_email" type="email">
+              </label>
+              <label>Occupation
+                <input name="father_occupation" type="text">
+              </label>
+            </div>
+            <label>Who has parental responsibility?
+              <input name="parental_responsibility" type="text">
+            </label>
+          </fieldset>
+
+          <!-- Emergency & Collection -->
+          <fieldset>
+            <legend>Emergency contacts & collection</legend>
+            <div class="two-col">
+              <label>Emergency contact name
+                <input name="emergency_name" type="text" required>
+              </label>
+              <label>Emergency contact phone
+                <input name="emergency_phone" type="tel" required>
+              </label>
+            </div>
+
+            <label>Other emergency contacts (name & phone)
+              <textarea name="other_emergency_contacts" rows="2" placeholder="Name — Phone"></textarea>
+            </label>
+
+            <label>People authorised to collect your child (names)
+              <textarea name="authorised_collectors" rows="2" placeholder="Name — Relationship"></textarea>
+            </label>
+
+            <label>Password (optional) — extra pickup precaution
+              <input name="collection_password" type="text" placeholder="Optional password for collectors">
+            </label>
+          </fieldset>
+
+          <!-- Medical & Dietary -->
+          <fieldset>
+            <legend>Doctor & Medical</legend>
+
+            <div class="two-col">
+              <label>Doctor's name
+                <input name="doctor_name" type="text">
+              </label>
+              <label>Doctor's phone
+                <input name="doctor_phone" type="tel">
+              </label>
+            </div>
+
+            <label>Medical conditions / allergies
+              <textarea name="medical_conditions" rows="3" placeholder="E.g. nut allergy, asthma"></textarea>
+            </label>
+
+            <div class="two-col">
+              <label>Long term medication (details)
+                <input name="long_term_medication" type="text">
+              </label>
+              <label>Special dietary requirements
+                <input name="dietary_requirements" type="text" placeholder="E.g. vegetarian">
+              </label>
+            </div>
+
+            <label>Other information relevant to care
+              <textarea name="other_info" rows="2"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- Photo / Upload -->
+          <fieldset>
+            <legend>Photo</legend>
+            <div class="two-col">
+              <label>Upload child's photo (note: Formspree free tier may not store files)
+                <input name="child_photo" type="file" accept="image/*">
+              </label>
+              <label>Photo link (optional)
+                <input name="photo_url" type="url" placeholder="https://drive.google.com/…">
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Permissions -->
+          <fieldset>
+            <legend>Permissions & consents</legend>
+            <div class="checkboxes">
+              <label><input name="consent_photos" type="checkbox" value="Yes"> Permission to take photographs for development files</label>
+              <label><input name="consent_promote" type="checkbox" value="Yes"> Permission to use photos for promotional purposes</label>
+              <label><input name="consent_social" type="checkbox" value="Yes"> Permission to use photos on social media</label>
+              <label><input name="consent_outings" type="checkbox" value="Yes"> Permission to take your child on local outings</label>
+              <label><input name="consent_firstaid" type="checkbox" value="Yes"> Permission to administer first aid</label>
+              <label><input name="consent_hospital" type="checkbox" value="Yes"> Permission to take child to hospital in emergency</label>
+              <label><input name="consent_emergency_treatment" type="checkbox" value="Yes"> I consent to necessary emergency medical treatment including anaesthetic if deemed necessary</label>
+            </div>
+          </fieldset>
+
+          <!-- Fees & Declaration -->
+          <fieldset>
+            <legend>Fees & Declaration</legend>
+            <p class="muted">Registration fee: <strong>R500 (non-refundable)</strong></p>
+            <p class="muted">I understand that fees are charged monthly in advance and one month's notice (or payment in lieu) is required to withdraw my child.</p>
+
+            <label>Signature (type full name)
+              <input name="signature_name" type="text" required placeholder="Parent / Guardian full name">
+            </label>
+
+            <div class="two-col">
+              <label>Date
+                <input name="signature_date" type="date" required>
+              </label>
+              <label>Registration fee paid?
+                <select name="registration_fee_paid">
+                  <option value="">Select…</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Submit -->
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Submit Application</button>
+            <button type="reset" class="btn-outline">Clear</button>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Bright Beginnings Daycare Centre</strong><br>
+        Eden Park Ext 5<br>
+        Contact: Thuli Masindi • 073 449 1354 / 078 711 1349<br>
+        <a href="mailto:brightbeginnings106@gmail.com">brightbeginnings106@gmail.com</a>
+      </div>
+      <a href="#home" class="back-top">↑ Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
