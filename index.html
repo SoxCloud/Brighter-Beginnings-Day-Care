@@ -103,16 +103,14 @@
 
 
    
-   <!-- Application Form -->
 <section id="apply" class="wrap section">
-  <h2>Application Form — Bright Beginnings (2025)</h2>
-  <p class="muted">Complete and submit this form.</p>
+  <h2>Preschool Application Form (2025)</h2>
+  <p class="muted">Please complete and submit this form.</p>
 
   <div class="card form-card">
     <form id="applicationForm"
           action="https://api.web3forms.com/submit"
           method="POST"
-          enctype="multipart/form-data"
           novalidate>
 
       <!-- Web3Forms Access Key -->
@@ -121,169 +119,67 @@
       <!-- Child Details -->
       <fieldset>
         <legend>Child's Details</legend>
-        <label>Full name
-          <input name="child_full_name" type="text" required>
+
+        <label>Full Name
+          <input type="text" name="child_full_name" required>
         </label>
-        <div class="two-col">
-          <label>Date of birth
-            <input name="child_dob" type="date" required>
-          </label>
-          <label>Preferred name
-            <input name="child_preferred_name" type="text">
-          </label>
-        </div>
-        <label>Home address
+
+        <label>Date of Birth
+          <input type="date" name="child_dob" required>
+        </label>
+
+        <label>Home Address
           <textarea name="child_address" rows="2" required></textarea>
         </label>
-        <div class="two-col">
-          <label>Sex
-            <select name="child_gender" required>
-              <option value="">Select…</option>
-              <option>Female</option>
-              <option>Male</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label>Ethnic group (optional)
-            <input name="child_ethnic" type="text">
-          </label>
-        </div>
-        <div class="two-col">
-          <label>First language at home
-            <input name="child_language" type="text">
-          </label>
-          <label>Other languages spoken
-            <input name="child_other_languages" type="text">
-          </label>
-        </div>
+
+        <label>Gender
+          <select name="child_gender" required>
+            <option value="">Select…</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+          </select>
+        </label>
       </fieldset>
 
       <!-- Parent / Guardian -->
       <fieldset>
-        <legend>Mother / Guardian (primary)</legend>
-        <div class="two-col">
-          <label>Full name
-            <input name="mother_name" type="text">
-          </label>
-          <label>Mobile
-            <input name="mother_mobile" type="tel">
-          </label>
-        </div>
-        <div class="two-col">
-          <label>Email
-            <input name="mother_email" type="email">
-          </label>
-          <label>Occupation
-            <input name="mother_occupation" type="text">
-          </label>
-        </div>
-        <label>Home address (if different)
-          <textarea name="mother_address" rows="2"></textarea>
+        <legend>Parent / Guardian</legend>
+
+        <label>Full Name
+          <input type="text" name="parent_name" required>
+        </label>
+
+        <label>Phone
+          <input type="tel" name="parent_phone" required>
+        </label>
+
+        <label>Email
+          <input type="email" name="parent_email" required>
+        </label>
+
+        <label>Relationship to Child
+          <input type="text" name="relationship" required>
         </label>
       </fieldset>
 
+      <!-- Emergency Contact -->
       <fieldset>
-        <legend>Father / Guardian (secondary)</legend>
-        <div class="two-col">
-          <label>Full name
-            <input name="father_name" type="text">
-          </label>
-          <label>Mobile
-            <input name="father_mobile" type="tel">
-          </label>
-        </div>
-        <div class="two-col">
-          <label>Email
-            <input name="father_email" type="email">
-          </label>
-          <label>Occupation
-            <input name="father_occupation" type="text">
-          </label>
-        </div>
-        <label>Who has parental responsibility?
-          <input name="parental_responsibility" type="text">
+        <legend>Emergency Contact</legend>
+
+        <label>Contact Name
+          <input type="text" name="emergency_name" required>
+        </label>
+
+        <label>Contact Phone
+          <input type="tel" name="emergency_phone" required>
         </label>
       </fieldset>
 
-      <!-- Emergency & Collection -->
+      <!-- Medical & Other Info -->
       <fieldset>
-        <legend>Emergency contacts & collection</legend>
-        <div class="two-col">
-          <label>Emergency contact name
-            <input name="emergency_name" type="text" required>
-          </label>
-          <label>Emergency contact phone
-            <input name="emergency_phone" type="tel" required>
-          </label>
-        </div>
-        <label>Other emergency contacts (name & phone)
-          <textarea name="other_emergency_contacts" rows="2" placeholder="Name — Phone"></textarea>
-        </label>
-        <label>People authorised to collect your child (names)
-          <textarea name="authorised_collectors" rows="2" placeholder="Name — Relationship"></textarea>
-        </label>
-        <label>Password (optional) — extra pickup precaution
-          <input name="collection_password" type="text" placeholder="Optional password for collectors">
-        </label>
-      </fieldset>
+        <legend>Medical & Othe
 
-      <!-- Medical & Dietary -->
-      <fieldset>
-        <legend>Doctor & Medical</legend>
-        <div class="two-col">
-          <label>Doctor's name
-            <input name="doctor_name" type="text">
-          </label>
-          <label>Doctor's phone
-            <input name="doctor_phone" type="tel">
-          </label>
-        </div>
-        <label>Medical conditions / allergies
-          <textarea name="medical_conditions" rows="3" placeholder="E.g. nut allergy, asthma"></textarea>
-        </label>
-        <div class="two-col">
-          <label>Long term medication (details)
-            <input name="long_term_medication" type="text">
-          </label>
-          <label>Special dietary requirements
-            <input name="dietary_requirements" type="text" placeholder="E.g. vegetarian">
-          </label>
-        </div>
-        <label>Other information relevant to care
-          <textarea name="other_info" rows="2"></textarea>
-        </label>
-      </fieldset>
-      <!-- Fees & Declaration -->
-      <fieldset>
-        <legend>Fees & Declaration</legend>
-        <p class="muted">Registration fee: <strong>R500 (non-refundable)</strong></p>
-        <p class="muted">I understand that fees are charged monthly in advance and one month's notice (or payment in lieu) is required to withdraw my child.</p>
-        <label>Signature (type full name)
-          <input name="signature_name" type="text" required placeholder="Parent / Guardian full name">
-        </label>
-        <div class="two-col">
-          <label>Date
-            <input name="signature_date" type="date" required>
-          </label>
-          <label>Registration fee paid?
-            <select name="registration_fee_paid">
-              <option value="">Select…</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- Submit -->
-      <div class="form-actions">
-        <button type="submit" class="btn-primary">Submit Application</button>
-        <button type="reset" class="btn-outline">Clear</button>
-        <div id="formStatus" class="form-status" aria-live="polite"></div>
-      </div>
-    </form>
-  </div>
-</section>
 
 <!-- Inline Web3Forms JavaScript -->
 <script>
@@ -335,6 +231,7 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
 
 
 
