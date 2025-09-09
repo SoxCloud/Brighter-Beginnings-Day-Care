@@ -11,15 +11,22 @@ if(menuToggle && primaryMenu){
 }
 
 // Hero slider auto-scroll
-const slides = document.querySelectorAll('.hero-slider .slide');
-let currentSlide = 0;
-function showSlide(index){
-  slides.forEach((s,i)=>s.classList.toggle('active', i===index));
-}
-setInterval(()=>{
-  currentSlide = (currentSlide+1) % slides.length;
-  showSlide(currentSlide);
-},5000);
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".hero-slider .slide");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.toggle("active", i === index);
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 5000);
+});
+
 
 // Gallery lightbox
 const galleryImgs = document.querySelectorAll('.gallery-grid img');
@@ -68,3 +75,4 @@ if(form){
     }
   });
 }
+
