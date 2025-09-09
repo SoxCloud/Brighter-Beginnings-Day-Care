@@ -42,45 +42,78 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("⚠️ No slides found for hero slider");
   }
 
-  // -----------------------
-  // Gallery lightbox
-  // -----------------------
-  const galleryImgs = document.querySelectorAll(".gallery-grid img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxClose = document.getElementById("lightboxClose");
+// -----------------------
+// Gallery lightbox
+// -----------------------
+const galleryImgs = document.querySelectorAll(".gallery-grid img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
 
-  if (galleryImgs.length > 0 && lightbox && lightboxImg && lightboxClose) {
-    console.log(`✅ Found ${galleryImgs.length} gallery images. Lightbox ready.`);
-    galleryImgs.forEach((img) => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add("show");
-        console.log(`🖼️ Lightbox opened for ${img.src}`);
-      });
+if (galleryImgs.length > 0 && lightbox && lightboxImg && lightboxClose) {
+  console.log(`✅ Found ${galleryImgs.length} gallery images. Lightbox ready.`);
+
+  galleryImgs.forEach((img) => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add("show");
+      console.log(`🖼️ Lightbox opened for ${img.src}`);
     });
+  });
 
-    lightboxClose.addEventListener("click", () => {
+  lightboxClose.addEventListener("click", () => {
+    lightbox.classList.remove("show");
+    console.log("❌ Lightbox closed (close button)");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
       lightbox.classList.remove("show");
-      console.log("❌ Lightbox closed (close button)");
-    });
+      console.log("❌ Lightbox closed (background click)");
+    }
+  });
 
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove("show");
-        console.log("❌ Lightbox closed (background click)");
-      }
-    });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.classList.remove("show");
+      console.log("❌ Lightbox closed (Escape key)");
+    }
+  });
+} else {
+  console.warn("⚠️ Gallery or lightbox elements not found");
+}
 
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        lightbox.classList.remove("show");
-        console.log("❌ Lightbox closed (Escape key)");
-      }
+// -----------------------
+// Gallery filters
+// -----------------------
+const filterBtns = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-grid img");
+
+if (filterBtns.length > 0 && galleryItems.length > 0) {
+  console.log("✅ Gallery filter ready");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Reset active state
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      galleryItems.forEach((img) => {
+        if (filter === "all" || img.dataset.category === filter) {
+          img.style.display = "block"; // Show
+        } else {
+          img.style.display = "none"; // Hide
+        }
+      });
+
+      console.log(`🎯 Filter applied: ${filter}`);
     });
-  } else {
-    console.warn("⚠️ Gallery or lightbox elements not found");
-  }
+  });
+} else {
+  console.warn("⚠️ No filter buttons or gallery items found");
+}
 
   // -----------------------
   // Form AJAX (Web3Forms / Formspree)
@@ -134,3 +167,4 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("⚠️ Form or status element not found");
   }
 });
+
