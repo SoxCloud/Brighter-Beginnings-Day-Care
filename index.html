@@ -12,6 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
+
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
@@ -38,11 +39,32 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="relative bg-pink-100 py-20 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4">Bright Beginnings Daycare Centre</h1>
-    <p class="text-lg text-gray-700 mb-6">A safe, loving home away from home in Eden Park Ext 5.</p>
-    <a href="#apply" class="bg-pink-600 text-white px-6 py-3 rounded-lg shadow hover:bg-pink-700 transition">Apply Now</a>
+  <!-- Hero Slider -->
+  <section id="home" class="relative w-full h-[80vh] overflow-hidden">
+    <!-- Slides -->
+    <div class="absolute inset-0 slide bg-cover bg-center flex flex-col items-center justify-center text-white text-center" style="background-image: url('images/slide1.jpg')">
+      <div class="bg-black bg-opacity-50 p-6 rounded-xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Bright Beginnings Daycare</h1>
+        <p class="text-lg mb-6">A safe and loving environment — Applications open for 2025</p>
+        <a href="#apply" class="bg-pink-600 px-6 py-3 rounded-lg hover:bg-pink-700 transition">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="absolute inset-0 slide bg-cover bg-center flex flex-col items-center justify-center text-white text-center hidden" style="background-image: url('images/slide2.jpg')">
+      <div class="bg-black bg-opacity-50 p-6 rounded-xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Qualified Staff</h1>
+        <p class="text-lg mb-6">First Aid trained, caring staff in separate age classes</p>
+        <a href="#programs" class="bg-pink-600 px-6 py-3 rounded-lg hover:bg-pink-700 transition">Our Programs</a>
+      </div>
+    </div>
+
+    <div class="absolute inset-0 slide bg-cover bg-center flex flex-col items-center justify-center text-white text-center hidden" style="background-image: url('images/slide3.jpg')">
+      <div class="bg-black bg-opacity-50 p-6 rounded-xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Nutritious Meals</h1>
+        <p class="text-lg mb-6">Cooked breakfast & lunch provided daily</p>
+        <a href="#apply" class="bg-pink-600 px-6 py-3 rounded-lg hover:bg-pink-700 transition">Enroll Today</a>
+      </div>
+    </div>
   </section>
 
   <!-- Programs -->
@@ -64,6 +86,18 @@
     </div>
   </section>
 
+  <!-- Gallery Preview -->
+  <section id="gallery" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-pink-700 mb-4">Gallery</h2>
+    <p class="text-gray-600 mb-6">Click any image to view the full gallery.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <a href="gallery.html"><img src="gallery/gallery1.jpg" alt="Painting activity" class="rounded-lg shadow hover:scale-105 transition"></a>
+      <a href="gallery.html"><img src="gallery/gallery2.jpg" alt="Story time" class="rounded-lg shadow hover:scale-105 transition"></a>
+      <a href="gallery.html"><img src="gallery/gallery3.jpg" alt="Outdoor play" class="rounded-lg shadow hover:scale-105 transition"></a>
+    </div>
+  </section>
+
+  <!-- Application Form -->
   <!-- Application Form -->
   <section id="apply" class="max-w-5xl mx-auto px-4 py-12">
     <h2 class="text-2xl font-bold text-pink-700 mb-4">Preschool Application Form (2025)</h2>
@@ -160,6 +194,7 @@
     </form>
   </section>
 
+
   <!-- Footer -->
   <footer class="bg-gray-100 mt-12 py-6">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
@@ -182,12 +217,29 @@
       mobileMenu.classList.toggle("hidden");
     });
 
-    // GSAP Animations
+    // GSAP Hero Slider
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if(i === index){
+          slide.classList.remove("hidden");
+          gsap.fromTo(slide, {opacity:0}, {opacity:1, duration:1});
+        } else {
+          slide.classList.add("hidden");
+        }
+      });
+    }
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+    showSlide(current);
+    setInterval(nextSlide, 5000);
+
+    // Page animations
     gsap.from("header", { y: -80, opacity: 0, duration: 1, ease: "power2" });
-    gsap.from("h1", { opacity: 0, y: 40, duration: 1, delay: 0.5 });
-    gsap.from("section", { opacity: 0, y: 30, duration: 1, stagger: 0.3, delay: 0.8 });
+    gsap.from("section h2", { opacity: 0, y: 30, duration: 1, stagger: 0.3, delay: 0.5 });
   </script>
-  <script src="script.js" defer></script>
 </body>
 </html>
-
