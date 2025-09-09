@@ -5,250 +5,187 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bright Beginnings Daycare Centre</title>
   <meta name="description" content="Bright Beginnings Daycare Centre — a safe, loving home away from home in Eden Park Ext 5. Applications open for 2025." />
-  <link rel="stylesheet" href="styles.css">
- </head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#home">
-  <img src="images/logo.png" alt="Bright Beginnings Logo" class="logo-img">
-  <span class="brand-text">Bright Beginnings</span>
-</a>
 
-      <nav class="nav">
-        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryMenu">☰</button>
-        <ul id="primaryMenu" class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="#apply" class="btn-cta">Apply (2025)</a></li>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="flex items-center space-x-2">
+        <img src="images/logo.png" alt="Bright Beginnings Logo" class="h-10 w-10">
+        <span class="font-bold text-pink-700 text-lg">Bright Beginnings</span>
+      </a>
+      <nav>
+        <ul class="hidden md:flex space-x-6 font-medium">
+          <li><a href="index.html" class="hover:text-pink-600">Home</a></li>
+          <li><a href="#programs" class="hover:text-pink-600">Programs</a></li>
+          <li><a href="gallery.html" class="hover:text-pink-600">Gallery</a></li>
+          <li><a href="#apply" class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition">Apply (2025)</a></li>
         </ul>
       </nav>
+      <button id="menuToggle" class="md:hidden text-2xl">☰</button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow px-4 py-3 space-y-2">
+      <a href="index.html" class="block">Home</a>
+      <a href="#programs" class="block">Programs</a>
+      <a href="gallery.html" class="block">Gallery</a>
+      <a href="#apply" class="block text-pink-600 font-bold">Apply (2025)</a>
     </div>
   </header>
 
-  <!-- Hero Slider -->
-  <section class="hero-slider" id="home">
-    <div class="slide active" style="background-image:url('images/slide1.jpg')">
-      <div class="overlay center">
-        <h1>Bright Beginnings Daycare</h1>
-        <p>A safe and loving environment — Applications open for 2025 </p>
-        <div class="hero-buttons">
-          <a href="#apply" class="btn-primary">Apply Now</a>
-          <a href="#about" class="btn-outline">Learn More</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide" style="background-image:url('images/slide2.jpg')">
-      <div class="overlay center">
-        <h1>Qualified Staff </h1>
-        <p>First Aid trained, caring staff in separate age classes </p>
-        <div class="hero-buttons">
-          <a href="#programs" class="btn-primary">Our Programs</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide" style="background-image:url('images/slide3.jpg')">
-      <div class="overlay center">
-        <h1>Nutritious Meals </h1>
-        <p>Cooked breakfast & lunch provided daily </p>
-        <div class="hero-buttons">
-          <a href="#apply" class="btn-primary">Enroll Today</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Everything else remains unchanged (About, Programs, Gallery, Application Form, Footer) -->
-  <section id="about" class="wrap section card">
-    <h2>About Us</h2>
-    <p>Bright Beginnings is a nurturing daycare centre in Eden Park Ext 5. We provide a warm environment where children learn through play, creativity, music and movement. Our preschool programme incorporates cognitive development, fine/gross motor skills, sensory exploration, and potty training while developing the child holistically.</p>
-    <p>We open at 06:00 and close at 18:00 (Mon–Fri). Half-day & full-day options available. We open throughout school holidays except for a three-week closure at year-end. Progress reports are issued in June and December.</p>
+  <!-- Hero -->
+  <section id="home" class="relative bg-pink-100 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4">Bright Beginnings Daycare Centre</h1>
+    <p class="text-lg text-gray-700 mb-6">A safe, loving home away from home in Eden Park Ext 5.</p>
+    <a href="#apply" class="bg-pink-600 text-white px-6 py-3 rounded-lg shadow hover:bg-pink-700 transition">Apply Now</a>
   </section>
 
   <!-- Programs -->
-  <section id="programs" class="wrap section">
-    <h2>Programs & Fees</h2>
-    <div class="grid cards">
-      <article class="card">
-        <h3>Tiny Tots (1–2 yrs)</h3>
-        <p>Gentle group introduction: sensory play, songs, naps, outdoor time.</p>
-      </article>
-      <article class="card">
-        <h3>Little Learners (3–4 yrs)</h3>
-        <p>Play-based learning: early literacy, numeracy, art, music, movement.</p>
-      </article>
-      <article class="card">
-        <h3>Pre-R (5 yrs)</h3>
-        <p>School readiness: phonics, pre-writing, problem solving, independence.</p>
-      </article>
-    </div>
-    <div class="notes card">
-      <p><strong>Meals:</strong> Cooked breakfast & lunch daily.</p>
-      <p><strong>Extras:</strong> Weekly themes & extra mural activities.</p>
+  <section id="programs" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-pink-700 mb-6">Our Programs</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Early Learning</h3>
+        <p class="text-gray-600">Fun, engaging activities to spark curiosity and creativity.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Outdoor Play</h3>
+        <p class="text-gray-600">Safe and supervised outdoor activities that build strength and friendships.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Healthy Meals</h3>
+        <p class="text-gray-600">Nutritious food prepared with care for healthy growth.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Gallery Preview -->
-<section id="gallery" class="wrap section">
-  <h2>Gallery</h2>
-  <p class="muted">Click any image to view the full gallery.</p>
-  <div class="gallery-grid">
-    <a href="gallery.html"><img src="gallery/gallery1.jpg" alt="Painting activity"></a>
-    <a href="gallery.html"><img src="gallery/gallery2.jpg" alt="Story time"></a>
-    <a href="gallery.html"><img src="gallery/gallery3.jpg" alt="Outdoor play"></a>
-  </div>
-</section>
-<!-- Application Form -->   
-<section id="apply" class="wrap section">
-  <h2>Preschool Application Form (2025)</h2>
-  <p class="muted">Please complete and submit this form.</p>
+  <!-- Application Form -->
+  <section id="apply" class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-pink-700 mb-4">Preschool Application Form (2025)</h2>
+    <p class="text-gray-600 mb-6">Please complete and submit this form.</p>
 
-  <div class="card form-card">
-    <form id="applicationForm"
-          action="https://api.web3forms.com/submit"
+    <form action="https://api.web3forms.com/submit"
           method="POST"
-          novalidate>
+          class="bg-white p-8 rounded-xl shadow space-y-8">
 
-      <!-- Web3Forms Access Key -->
       <input type="hidden" name="access_key" value="23ec3a24-6279-4340-b12b-278fd364b5f9">
 
       <!-- Child Details -->
-      <fieldset>
-        <legend>Child's Details</legend>
-
-        <label>Full Name
-          <input type="text" name="child_full_name" required>
-        </label>
-
-        <label>Date of Birth
-          <input type="date" name="child_dob" required>
-        </label>
-
-        <label>Home Address
-          <textarea name="child_address" rows="2" required></textarea>
-        </label>
-
-        <label>Gender
-          <select name="child_gender" required>
+      <fieldset class="space-y-4">
+        <legend class="text-lg font-semibold text-pink-700 mb-2">Child's Details</legend>
+        <div>
+          <label class="block font-medium">Full Name</label>
+          <input type="text" name="child_full_name" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block font-medium">Date of Birth</label>
+          <input type="date" name="child_dob" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block font-medium">Home Address</label>
+          <textarea name="child_address" rows="2" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500"></textarea>
+        </div>
+        <div>
+          <label class="block font-medium">Gender</label>
+          <select name="child_gender" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
             <option value="">Select…</option>
             <option>Female</option>
             <option>Male</option>
             <option>Other</option>
           </select>
-        </label>
+        </div>
       </fieldset>
 
       <!-- Parent / Guardian -->
-      <fieldset>
-        <legend>Parent / Guardian</legend>
-
-        <label>Full Name
-          <input type="text" name="parent_name" required>
-        </label>
-
-        <label>Phone
-          <input type="tel" name="parent_phone" required>
-        </label>
-
-        <label>Email
-          <input type="email" name="parent_email" required>
-        </label>
-
-        <label>Relationship to Child
-          <input type="text" name="relationship" required>
-        </label>
+      <fieldset class="space-y-4">
+        <legend class="text-lg font-semibold text-pink-700 mb-2">Parent / Guardian</legend>
+        <div>
+          <label class="block font-medium">Full Name</label>
+          <input type="text" name="parent_name" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block font-medium">Phone</label>
+          <input type="tel" name="parent_phone" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block font-medium">Email</label>
+          <input type="email" name="parent_email" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block font-medium">Relationship to Child</label>
+          <input type="text" name="relationship" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
       </fieldset>
 
       <!-- Emergency Contact -->
-      <fieldset>
-        <legend>Emergency Contact</legend>
-
-        <label>Contact Name
-          <input type="text" name="emergency_name" required>
-        </label>
-
-        <label>Contact Phone
-          <input type="tel" name="emergency_phone" required>
-        </label>
-      </fieldset>
-
-      <!-- Medical & Other Info -->
-      <fieldset>
-        <legend>Medical & Other Information</legend>
-
-        <label>Allergies / Conditions
-          <textarea name="medical_conditions" rows="2" placeholder="E.g. Nut allergy, Asthma"></textarea>
-        </label>
-
-        <label>Special Dietary Requirements
-          <input type="text" name="dietary_requirements">
-        </label>
-
-        <label>Other Notes
-          <textarea name="other_info" rows="2"></textarea>
-        </label>
+      <fieldset class="space-y-4">
+        <legend class="text-lg font-semibold text-pink-700 mb-2">Emergency Contact</legend>
+        <div>
+          <label class="block font-medium">Contact Name</label>
+          <input type="text" name="emergency_name" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block font-medium">Contact Phone</label>
+          <input type="tel" name="emergency_phone" required class="mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500">
+        </div>
       </fieldset>
 
       <!-- Permissions -->
-      <fieldset>
-        <legend>Permissions</legend>
-        <label><input type="checkbox" name="consent_photos" value="Yes"> I allow photos for school activities</label>
-        <label><input type="checkbox" name="consent_trips" value="Yes"> I allow participation in local trips</label>
-        <label><input type="checkbox" name="consent_firstaid" value="Yes"> I allow first aid treatment in emergencies</label>
-      </fieldset>
-
-      <!-- Declaration -->
-      <fieldset>
-        <legend>Declaration</legend>
-        <label>Parent / Guardian Signature (Full Name)
-          <input type="text" name="signature_name" required>
+      <fieldset class="space-y-2">
+        <legend class="text-lg font-semibold text-pink-700 mb-2">Permissions</legend>
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="consent_photos" value="Yes" class="rounded text-pink-600 focus:ring-pink-500">
+          <span>I allow photos for school activities</span>
         </label>
-        <label>Date
-          <input type="date" name="signature_date" required>
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="consent_trips" value="Yes" class="rounded text-pink-600 focus:ring-pink-500">
+          <span>I allow participation in local trips</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="consent_firstaid" value="Yes" class="rounded text-pink-600 focus:ring-pink-500">
+          <span>I allow first aid treatment in emergencies</span>
         </label>
       </fieldset>
-
-      <!-- Form Status -->
-      <div id="formStatus" class="form-status" aria-live="polite"></div>
 
       <!-- Submit -->
-      <div class="form-actions">
-        <button type="submit" class="btn-primary">Submit Application</button>
-        <button type="reset" class="btn-outline">Clear</button>
+      <div class="flex gap-3 pt-4">
+        <button type="submit" class="bg-pink-600 text-white px-6 py-2 rounded-lg shadow hover:bg-pink-700 transition">Submit Application</button>
+        <button type="reset" class="border border-gray-300 px-6 py-2 rounded-lg hover:bg-gray-100 transition">Clear</button>
       </div>
     </form>
-  </div>
-</section>
-<!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+      <div class="text-center md:text-left">
         <strong>Bright Beginnings Daycare Centre</strong><br>
         Eden Park Ext 5<br>
         Contact: Thuli Masindi • 073 449 1354 / 078 711 1349<br>
-        <a href="mailto:brightbeginnings106@gmail.com">brightbeginnings106@gmail.com</a>
+        <a href="mailto:brightbeginnings106@gmail.com" class="text-pink-600 hover:underline">brightbeginnings106@gmail.com</a>
       </div>
-      <a href="#home" class="back-top">↑ Back to top</a>
+      <a href="#home" class="mt-4 md:mt-0 text-pink-600 hover:underline">↑ Back to top</a>
     </div>
   </footer>
-  <script src="script.js" defer></script>
-  <script src="slider.js"></script>-->
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // GSAP Animations
+    gsap.from("header", { y: -80, opacity: 0, duration: 1, ease: "power2" });
+    gsap.from("h1", { opacity: 0, y: 40, duration: 1, delay: 0.5 });
+    gsap.from("section", { opacity: 0, y: 30, duration: 1, stagger: 0.3, delay: 0.8 });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
