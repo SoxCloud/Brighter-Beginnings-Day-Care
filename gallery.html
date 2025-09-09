@@ -5,93 +5,137 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bright Beginnings Daycare Centre</title>
   <meta name="description" content="Bright Beginnings Daycare Centre — a safe, loving home away from home in Eden Park Ext 5. Applications open for 2025." />
-  <link rel="stylesheet" href="styles.css">
-   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind & GSAP -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-  <body>
-<!-- Header -->
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#home">
-  <img src="images/logo.png" alt="Bright Beginnings Logo" class="logo-img">
-  <span class="brand-text">Bright Beginnings</span>
-</a>
+<body class="bg-gray-50 text-gray-800">
 
-      <nav class="nav">
-        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryMenu">☰</button>
-        <ul id="primaryMenu" class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-         <li><a href="index.html#apply" class="btn-cta">Apply (2025)</a></li> 
+  <!-- Header -->
+  <header class="bg-pink-100 shadow">
+    <div class="wrap mx-auto flex items-center justify-between px-4 py-4">
+      <a class="flex items-center space-x-2" href="#home">
+        <img src="images/logo.png" alt="Bright Beginnings Logo" class="h-10 w-10">
+        <span class="text-xl font-bold text-pink-700">Bright Beginnings</span>
+      </a>
+      <nav>
+        <button id="menuToggle" class="md:hidden text-2xl">☰</button>
+        <ul id="primaryMenu" class="hidden md:flex gap-6 items-center">
+          <li><a href="index.html" class="hover:text-pink-600">Home</a></li>
+          <li><a href="#programs" class="hover:text-pink-600">Programs</a></li>
+          <li><a href="gallery.html" class="font-semibold text-pink-700">Gallery</a></li>
+          <li><a href="index.html#apply" class="bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 transition">Apply (2025)</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
- <section class="wrap section gallery-page">
-  <h1>Photo Gallery</h1>
-  <p class="muted">Click any image to view full size.</p>
+  <!-- Gallery Section -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold text-center text-pink-700 mb-2">Photo Gallery</h1>
+    <p class="text-center text-gray-600 mb-6">Click any image to view full size.</p>
 
-  <!-- Filter Menu -->
-  <div class="gallery-filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="classroom">Classroom</button>
-    <button class="filter-btn" data-filter="outdoor">Outdoor</button>
-    <button class="filter-btn" data-filter="meals">Meals</button>
-    <button class="filter-btn" data-filter="events">Events</button>
+    <!-- Filter Menu -->
+    <div class="flex justify-center gap-3 flex-wrap mb-8">
+      <button class="filter-btn bg-pink-600 text-white px-4 py-2 rounded-full shadow font-semibold" data-filter="all">All</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold hover:bg-pink-100 transition" data-filter="classroom">Classroom</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold hover:bg-pink-100 transition" data-filter="outdoor">Outdoor</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold hover:bg-pink-100 transition" data-filter="meals">Meals</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full font-semibold hover:bg-pink-100 transition" data-filter="events">Events</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Classroom -->
+      <img src="gallery/classroom1.jpg" alt="Painting activity" data-category="classroom" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/classroom2.jpg" alt="Story time" data-category="classroom" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/classroom3.jpg" alt="Circle time" data-category="classroom" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+
+      <!-- Outdoor -->
+      <img src="gallery/outdoor1.jpg" alt="Playground fun" data-category="outdoor" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/outdoor2.jpg" alt="Sandbox" data-category="outdoor" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/outdoor3.jpg" alt="Slides" data-category="outdoor" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+
+      <!-- Meals -->
+      <img src="gallery/meals1.jpg" alt="Lunch time" data-category="meals" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/meals2.jpg" alt="Healthy snacks" data-category="meals" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/meals3.jpg" alt="Breakfast table" data-category="meals" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+
+      <!-- Events -->
+      <img src="gallery/events1.jpg" alt="Birthday party" data-category="events" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/events2.jpg" alt="Holiday event" data-category="events" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+      <img src="gallery/events3.jpg" alt="Graduation" data-category="events" class="w-full h-60 object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition-transform">
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+    <button id="lightboxClose" class="absolute top-4 right-6 text-white text-3xl font-bold">✕</button>
+    <img id="lightboxImg" src="" alt="" class="max-w-[90%] max-h-[80%] rounded-xl shadow-lg">
   </div>
 
-  <!-- Gallery Grid -->
-  <div class="gallery-grid">
-    <!-- Classroom -->
-    <img src="gallery/classroom1.jpg" alt="Painting activity" data-category="classroom">
-    <img src="gallery/classroom2.jpg" alt="Story time" data-category="classroom">
-    <img src="gallery/classroom3.jpg" alt="Circle time" data-category="classroom">
-
-    <!-- Outdoor -->
-    <img src="gallery/outdoor1.jpg" alt="Playground fun" data-category="outdoor">
-    <img src="gallery/outdoor2.jpg" alt="Sandbox" data-category="outdoor">
-    <img src="gallery/outdoor3.jpg" alt="Slides" data-category="outdoor">
-
-    <!-- Meals -->
-    <img src="gallery/meals1.jpg" alt="Lunch time" data-category="meals">
-    <img src="gallery/meals2.jpg" alt="Healthy snacks" data-category="meals">
-    <img src="gallery/meals3.jpg" alt="Breakfast table" data-category="meals">
-
-    <!-- Events -->
-    <img src="gallery/events1.jpg" alt="Birthday party" data-category="events">
-    <img src="gallery/events2.jpg" alt="Holiday event" data-category="events">
-    <img src="gallery/events3.jpg" alt="Graduation" data-category="events">
-  </div>
-</section>
-
- <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <button id="lightboxClose" class="lb-close">✕</button>
-    <img id="lightboxImg" src="" alt="">
-  </div>
-<footer class="site-footer">
-    <div class="wrap footer-inner">
+  <!-- Footer -->
+  <footer class="bg-gray-100 border-t mt-10">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
       <div>
         <strong>Bright Beginnings Daycare Centre</strong><br>
         Eden Park Ext 5<br>
         Contact: Thuli Masindi • 073 449 1354 / 078 711 1349<br>
-        <a href="mailto:brightbeginnings106@gmail.com">brightbeginnings106@gmail.com</a>
+        <a href="mailto:brightbeginnings106@gmail.com" class="text-pink-600">brightbeginnings106@gmail.com</a>
       </div>
-      <a href="#home" class="back-top">↑ Back to top</a>
+      <a href="#home" class="text-pink-600 font-bold">↑ Back to top</a>
     </div>
   </footer>
-  <script src="script.js" defer></script>
+
+  <!-- Scripts -->
+  <script>
+    // Filtering with GSAP
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-grid img');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('bg-pink-600','text-white'));
+        filterButtons.forEach(btn => btn.classList.add('bg-gray-200','text-gray-700'));
+
+        button.classList.remove('bg-gray-200','text-gray-700');
+        button.classList.add('bg-pink-600','text-white');
+
+        const filter = button.dataset.filter;
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.classList.remove('hidden');
+            gsap.fromTo(item, {opacity:0, scale:0.8}, {opacity:1, scale:1, duration:0.4});
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    galleryItems.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.remove('hidden');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        gsap.fromTo(lightboxImg, {scale:0.8, opacity:0}, {scale:1, opacity:1, duration:0.4});
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
